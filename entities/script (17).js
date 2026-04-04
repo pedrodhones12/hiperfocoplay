@@ -1,0 +1,87 @@
+{
+  "name": "SkillProgress",
+  "type": "object",
+  "properties": {
+    "skill_name": {
+      "type": "string",
+      "description": "Nome da habilidade"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "tecnologia",
+        "sustentabilidade",
+        "cultura_criativo",
+        "politica_juridico",
+        "genia_ciencia",
+        "agronegocio",
+        "turismo",
+        "economia_mar",
+        "moda_design",
+        "cidades_inteligentes",
+        "healthtech"
+      ],
+      "description": "Categoria da habilidade"
+    },
+    "level": {
+      "type": "number",
+      "default": 0,
+      "description": "N\u00edvel atual (0-100)"
+    },
+    "experience_points": {
+      "type": "number",
+      "default": 0,
+      "description": "Pontos de experi\u00eancia"
+    },
+    "games_completed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs dos jogos completados nessa habilidade"
+    },
+    "projects_completed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs dos projetos completados"
+    },
+    "milestones": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "level": {
+            "type": "number"
+          },
+          "achieved_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "next_milestone": {
+      "type": "object",
+      "properties": {
+        "level": {
+          "type": "number"
+        },
+        "description": {
+          "type": "string"
+        },
+        "experience_needed": {
+          "type": "number"
+        }
+      }
+    }
+  },
+  "required": [
+    "skill_name",
+    "category"
+  ]
+}

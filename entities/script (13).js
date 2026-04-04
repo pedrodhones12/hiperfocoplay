@@ -1,0 +1,98 @@
+{
+  "name": "MissionProgress",
+  "type": "object",
+  "properties": {
+    "mission_id": {
+      "type": "string",
+      "description": "ID da miss\u00e3o"
+    },
+    "era_id": {
+      "type": "string",
+      "description": "ID da era"
+    },
+    "started_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "completed": {
+      "type": "boolean",
+      "default": false
+    },
+    "completion_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "current_stage": {
+      "type": "number",
+      "default": 0
+    },
+    "stages_completed": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "session_start": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "last_interaction": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "time_spent_minutes": {
+      "type": "number",
+      "default": 0
+    },
+    "choices_made": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "stage": {
+            "type": "number"
+          },
+          "choice_text": {
+            "type": "string"
+          },
+          "skill_detected": {
+            "type": "string"
+          },
+          "thinking_time_seconds": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "pauses_taken": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "stage": {
+            "type": "number"
+          },
+          "duration_minutes": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "hyperfocus_detected": {
+      "type": "boolean",
+      "default": false
+    },
+    "focus_duration_minutes": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "mission_id",
+    "era_id"
+  ]
+}

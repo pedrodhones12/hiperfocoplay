@@ -1,0 +1,124 @@
+{
+  "name": "Post",
+  "type": "object",
+  "properties": {
+    "content": {
+      "type": "string",
+      "description": "Conte\u00fado do post"
+    },
+    "author_name": {
+      "type": "string",
+      "description": "Nome do autor"
+    },
+    "author_avatar": {
+      "type": "string",
+      "description": "URL do avatar do autor"
+    },
+    "author_country": {
+      "type": "string",
+      "description": "Pa\u00eds do autor"
+    },
+    "post_type": {
+      "type": "string",
+      "enum": [
+        "achievement",
+        "project",
+        "looking_for",
+        "question",
+        "announcement"
+      ],
+      "description": "Tipo de post"
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "URLs de imagens"
+    },
+    "videos": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "URLs de v\u00eddeos"
+    },
+    "documents": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "URLs de documentos (PDF, DOC, etc)"
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Links compartilhados"
+    },
+    "project_id": {
+      "type": "string",
+      "description": "ID do projeto relacionado"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Tags do post"
+    },
+    "likes": {
+      "type": "number",
+      "default": 0,
+      "description": "N\u00famero de curtidas"
+    },
+    "liked_by": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Emails dos usu\u00e1rios que curtiram"
+    },
+    "comments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "author": {
+            "type": "string"
+          },
+          "author_email": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "description": "Coment\u00e1rios do post"
+    },
+    "shares": {
+      "type": "number",
+      "default": 0,
+      "description": "N\u00famero de compartilhamentos"
+    }
+  },
+  "required": [
+    "content",
+    "author_name",
+    "post_type"
+  ]
+}
