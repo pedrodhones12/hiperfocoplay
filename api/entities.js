@@ -1,9 +1,12 @@
-import { base44 } from './base44Client';
+export const login = (email, password) => {
+  const users = JSON.parse(localStorage.getItem("users")) || [];
 
+  const user = users.find(
+    user => user.email === email && user.password === password
+  );
 
-export const Query = base44.entities.Query;
-
-
-
-// auth sdk:
-export const User = base44.auth;
+  if (user) {
+    localStorage.setItem("token", "logado");
+    localStorage.setItem("currentUser", JSON.stringify(user));
+    return true;
+  }
