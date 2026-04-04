@@ -1,18 +1,14 @@
-// CADASTRO
-// =======================
-export const register = (email, password) => {
-  const users = JSON.parse(localStorage.getItem("users")) || [];
 
-  const userExists = users.find(user => user.email === email);
+// apiClient.js → RESPONSÁVEL POR CONSUMIR A API EXTERNA
 
-  if (userExists) {
-    return "Usuário já existe!";
+const axios = require('axios');
+require('dotenv').config();
+
+const apiClient = axios.create({
+  baseURL: 'https://api.hiperfocoplay.com',
+  headers: {
+    Authorization: `Bearer ${process.env.API_KEY}`
   }
+});
 
-  const newUser = { email, password };
-
-  users.push(newUser);
-  localStorage.setItem("users", JSON.stringify(users));
-
-  return "Cadastro realizado!";
-};
+module.exports = apiClient;
