@@ -1,12 +1,22 @@
-export const login = (email, password) => {
-  const users = JSON.parse(localStorage.getItem("users")) || [];
+import axios from "axios";
 
-  const user = users.find(
-    user => user.email === email && user.password === password
-  );
+export const login = async (email, password) => {
+  try {
+    const response = await axios.post("http://localhost:3000/login", {
+      email,
+      password
+    });
 
-  if (user) {
-    localStorage.setItem("token", "logado");
-    localStorage.setItem("currentUser", JSON.stringify(user));
+    const data = response.data;
+
+    // salva token e usuário
+    localStorage.setItem("token", data.token);
+    localStorage.setItem("currentUser", JSON.stringify(data.user));
+
     return true;
+
+  } catch (error) {
+    console.error("Erro no login:", error);
+    return false;
   }
+};
