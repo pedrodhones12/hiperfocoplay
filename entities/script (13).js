@@ -1,0 +1,89 @@
+{
+  "name": "JobOpportunity",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "T\u00edtulo da vaga"
+    },
+    "company": {
+      "type": "string",
+      "description": "Empresa"
+    },
+    "location": {
+      "type": "string",
+      "description": "Localiza\u00e7\u00e3o"
+    },
+    "country": {
+      "type": "string",
+      "description": "Pa\u00eds"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descri\u00e7\u00e3o da vaga"
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Requisitos"
+    },
+    "benefits": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Benef\u00edcios"
+    },
+    "job_type": {
+      "type": "string",
+      "enum": [
+        "remoto",
+        "hibrido",
+        "presencial"
+      ],
+      "description": "Tipo de trabalho"
+    },
+    "neurodivergent_friendly": {
+      "type": "boolean",
+      "default": true,
+      "description": "Se \u00e9 amig\u00e1vel para neurodivergentes"
+    },
+    "accessibility_features": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Recursos de acessibilidade"
+    },
+    "application_url": {
+      "type": "string",
+      "description": "URL para candidatura"
+    },
+    "salary_range": {
+      "type": "string",
+      "description": "Faixa salarial"
+    },
+    "posted_by_ai": {
+      "type": "boolean",
+      "default": false,
+      "description": "Se foi postado pela IA"
+    },
+    "sector": {
+      "type": "string",
+      "description": "Setor da vaga"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "title",
+    "company",
+    "location",
+    "country",
+    "description"
+  ]
+}

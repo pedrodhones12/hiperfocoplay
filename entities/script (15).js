@@ -1,0 +1,154 @@
+{
+  "name": "LearningPath",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "T\u00edtulo da trilha"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descri\u00e7\u00e3o detalhada da trilha"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "tecnologia",
+        "sustentabilidade",
+        "cultura_criativo",
+        "politica_juridico",
+        "genia_ciencia",
+        "agronegocio",
+        "turismo",
+        "economia_mar",
+        "moda_design",
+        "cidades_inteligentes",
+        "healthtech"
+      ],
+      "description": "Categoria principal da trilha"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "iniciante",
+        "intermediario",
+        "avancado"
+      ],
+      "default": "iniciante",
+      "description": "N\u00edvel de dificuldade"
+    },
+    "estimated_duration": {
+      "type": "number",
+      "description": "Dura\u00e7\u00e3o estimada em horas"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Emoji ou \u00edcone da trilha"
+    },
+    "color": {
+      "type": "string",
+      "description": "Cor de destaque da trilha"
+    },
+    "objectives": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Objetivos de aprendizagem"
+    },
+    "prerequisites": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Pr\u00e9-requisitos necess\u00e1rios"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "game",
+              "article",
+              "quiz",
+              "challenge",
+              "video"
+            ]
+          },
+          "content_id": {
+            "type": "string",
+            "description": "ID do jogo, artigo, etc"
+          },
+          "estimated_time": {
+            "type": "number",
+            "description": "Tempo estimado em minutos"
+          },
+          "required": {
+            "type": "boolean",
+            "default": true
+          }
+        }
+      },
+      "description": "Etapas da trilha"
+    },
+    "certificate": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "badge_emoji": {
+          "type": "string"
+        }
+      },
+      "description": "Certificado ao completar"
+    },
+    "target_audience": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "P\u00fablico-alvo"
+    },
+    "skills_gained": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Habilidades adquiridas"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Se a trilha est\u00e1 ativa"
+    },
+    "enrollment_count": {
+      "type": "number",
+      "default": 0,
+      "description": "N\u00famero de pessoas inscritas"
+    },
+    "completion_count": {
+      "type": "number",
+      "default": 0,
+      "description": "N\u00famero de pessoas que completaram"
+    }
+  },
+  "required": [
+    "title",
+    "description",
+    "category",
+    "steps"
+  ]
+}

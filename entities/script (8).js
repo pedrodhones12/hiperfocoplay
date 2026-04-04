@@ -1,0 +1,71 @@
+{
+  "name": "GameEra",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "T\u00edtulo da era"
+    },
+    "subtitle": {
+      "type": "string",
+      "description": "Subt\u00edtulo da era"
+    },
+    "order": {
+      "type": "number",
+      "description": "Ordem da era (0 = onboarding)"
+    },
+    "theme": {
+      "type": "string",
+      "description": "Tema principal da era"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descri\u00e7\u00e3o narrativa da era"
+    },
+    "intro_narrative": {
+      "type": "string",
+      "description": "Narrativa de introdu\u00e7\u00e3o da era"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Emoji/\u00edcone da era"
+    },
+    "color": {
+      "type": "string",
+      "description": "Cor da era"
+    },
+    "estimated_duration_days": {
+      "type": "number",
+      "description": "Dura\u00e7\u00e3o estimada em dias"
+    },
+    "unlock_requirements": {
+      "type": "object",
+      "properties": {
+        "previous_era_completed": {
+          "type": "boolean",
+          "default": false
+        },
+        "missions_required": {
+          "type": "number",
+          "default": 0
+        }
+      }
+    },
+    "cognitive_focus": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Habilidades cognitivas desta era"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "title",
+    "order",
+    "theme"
+  ]
+}

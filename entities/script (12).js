@@ -1,0 +1,87 @@
+{
+  "name": "JobApplication",
+  "type": "object",
+  "properties": {
+    "job_id": {
+      "type": "string",
+      "description": "ID da vaga"
+    },
+    "applicant_email": {
+      "type": "string",
+      "description": "Email do candidato"
+    },
+    "applicant_name": {
+      "type": "string",
+      "description": "Nome do candidato"
+    },
+    "resume_url": {
+      "type": "string",
+      "description": "URL do curr\u00edculo"
+    },
+    "cover_letter": {
+      "type": "string",
+      "description": "Carta de apresenta\u00e7\u00e3o"
+    },
+    "match_score": {
+      "type": "number",
+      "description": "Score de compatibilidade (0-100)"
+    },
+    "match_details": {
+      "type": "object",
+      "properties": {
+        "skills_match": {
+          "type": "number"
+        },
+        "interests_match": {
+          "type": "number"
+        },
+        "accessibility_match": {
+          "type": "number"
+        },
+        "sector_match": {
+          "type": "number"
+        }
+      }
+    },
+    "ai_analysis": {
+      "type": "object",
+      "properties": {
+        "strengths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "recommendations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "compatibility_summary": {
+          "type": "string"
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "reviewing",
+        "interview",
+        "accepted",
+        "rejected"
+      ],
+      "default": "pending"
+    },
+    "applied_date": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "job_id",
+    "applicant_email",
+    "applicant_name"
+  ]
+}

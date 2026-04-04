@@ -1,0 +1,148 @@
+{
+  "name": "LearningModule",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "T\u00edtulo do m\u00f3dulo"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descri\u00e7\u00e3o do m\u00f3dulo"
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "iniciante",
+        "intermediario",
+        "avancado",
+        "expert"
+      ],
+      "default": "iniciante",
+      "description": "N\u00edvel do m\u00f3dulo"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "tecnologia",
+        "sustentabilidade",
+        "cultura_criativo",
+        "politica_juridico",
+        "genia_ciencia",
+        "agronegocio",
+        "turismo",
+        "economia_mar",
+        "moda_design",
+        "cidades_inteligentes",
+        "healthtech"
+      ],
+      "description": "Categoria do m\u00f3dulo"
+    },
+    "unlock_requirements": {
+      "type": "object",
+      "properties": {
+        "games_completed": {
+          "type": "number",
+          "default": 0
+        },
+        "score_required": {
+          "type": "number",
+          "default": 0
+        },
+        "badges_required": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "previous_modules": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "content": {
+      "type": "object",
+      "properties": {
+        "games": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "readings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "practical_projects": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "difficulty": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "rewards": {
+      "type": "object",
+      "properties": {
+        "badge_id": {
+          "type": "string"
+        },
+        "points": {
+          "type": "number"
+        },
+        "unlocks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "icon": {
+      "type": "string",
+      "description": "Emoji do m\u00f3dulo"
+    },
+    "color": {
+      "type": "string",
+      "description": "Cor do m\u00f3dulo"
+    },
+    "estimated_duration": {
+      "type": "number",
+      "description": "Dura\u00e7\u00e3o estimada em horas"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "title",
+    "description",
+    "level",
+    "category"
+  ]
+}
