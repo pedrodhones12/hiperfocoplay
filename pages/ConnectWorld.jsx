@@ -1,7 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { base44 } from "@/api/base44Client";
 import { useQuery } from "@tanstack/react-query";
-import {
+import axios from "axios";
+
+// ===============================
+// CONFIGURAÇÃO DA SUA API
+// ===============================
+const apiClient = axios.create({
+  baseURL: "https://api.hiperfocoplay.com",
+  headers: {
+    Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`
+  }
+});
+
   Globe,
   GraduationCap,
   Rocket,
