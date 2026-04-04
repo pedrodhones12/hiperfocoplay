@@ -17,8 +17,12 @@ import {
   TrendingUp,
   Gem
 } from "lucide-react";
-import { base44 } from "@/api/base44Client";
+import { logout } from "@/utils/auth";
 
+const handleLogout = () => {
+  logout();
+  window.location.href = "/";
+};
 export default function Layout({ children }) {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
